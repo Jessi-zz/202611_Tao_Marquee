@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zzMarquee Dock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Geist:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="dock.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="page active" id="editPage">
+            <header class="app-header">
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <span class="logo-text">zzMarquee</span>
+                </div>
+                <button class="header-btn primary" id="replayBtn">
+                    Replay
+                    <span class="material-icons">replay</span>
+                </button>
+            </header>
+
+            <main class="main-content">
+                <section class="input-section">
+                    <h2 data-en="Text">跑馬燈文字</h2>
+                    <textarea id="textInput" placeholder="輸入文字"></textarea>
+                </section>
+            </main>
+
+            <footer class="app-footer">
+                <div class="footer-left">
+                    <button class="footer-btn" id="settingsBtn" title="設定">
+                        <span class="material-icons">settings</span>
+                    </button>
+                    <button class="footer-btn" id="clearBtn" title="清除文字">
+                        <span class="material-icons">delete</span>
+                    </button>
+                </div>
+            </footer>
+        </div>
+
+        <div class="page" id="settingsPage">
+            <header class="app-header">
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <span class="logo-text">zzMarquee</span>
+                </div>
+                <button class="header-btn secondary" id="setTextBtn">
+                    Text
+                    <span class="material-icons">chevron_right</span>
+                </button>
+            </header>
+
+            <main class="main-content" id="settingsList"></main>
+
+            <footer class="app-footer">
+                <div class="footer-left">
+                    <button class="footer-btn" id="backBtn" title="返回">
+                        <span class="material-icons">arrow_back</span>
+                    </button>
+                    <button class="footer-btn" id="resetAllBtn" title="全部重置">
+                        <span class="material-icons">restart_alt</span>
+                    </button>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="dock.js"></script>
+</body>
+</html>
