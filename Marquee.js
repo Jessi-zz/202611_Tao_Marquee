@@ -246,6 +246,7 @@
         S = next;
         applyGap();
         if (changed.includes('text') || changed.includes('latin')) applyText();
+        if (changed.includes('text')) loadFont();
         if (changed.length && !changed.every(k => LIVE_KEYS.has(k))) restart();
     }
 
@@ -263,19 +264,23 @@
         };
     }
 
+    function loadFont() {
+        if (!document.fonts) return;
+        document.fonts.load('40px "GenWanMin2 TC R"', S.text).finally(restart);
+    }
+
     let resizeTimer = 0;
-    new ResizeObserver(() => {
+    const resizeObserver = new ResizeObserver(() => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(restart, 100);
-    }).observe(vp);
+    });
+    resizeObserver.observe(vp);
+    resizeObserver.observe(c1);
 
     load();
     applyGap();
     applyText();
     restart();
-
-    if (document.fonts) {
-        document.fonts.load('600 40px "GenWanMin TW"').finally(restart);
-        document.fonts.ready.then(restart);
-    }
+    loadFont();
+    if (document.fonts) document.fonts.ready.then(restart);
 })();
