@@ -1,9 +1,4 @@
-@font-face {
-    font-family: 'GenWanMin TW';
-    src: url('./media/GENWANMINTW-SEMIBOLD.TTF') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
+@import url("https://fontsapi.zeoseven.com/301/main/result.css");
 
 :root {
     --font-size: 52px;
@@ -80,8 +75,8 @@ html, body {
 }
 
 .copy {
-    font-family: 'GenWanMin TW', 'Noto Serif TC', serif;
-    font-weight: 600;
+    font-family: "GenWanMin2 TC R", 'Noto Serif TC', serif;
+    font-weight: normal;
     font-size: var(--font-size);
     line-height: 1;
     color: var(--color);
